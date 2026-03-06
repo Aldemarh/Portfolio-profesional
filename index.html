@@ -13,7 +13,6 @@
         <nav>
             <div class="logo">
                 <span class="logo-icon">AH</span>
-                <span class="logo-text">Portafolio</span>
             </div>
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
@@ -30,9 +29,15 @@
                 <div class="hero-text">
                     <h1>Hola, soy Aldemar Hernandez</h1>
                     <p class="subtitle">Ingeniero de sistemas</p>
-                    <p>Desarrollador web y de software apasionado por crear soluciones funcionales, escalables y orientadas al usuario. En constante aprendizaje de nuevas tecnologías para aportar valor y calidad a cada proyecto.</p>
+                    <p>Desarrollador web y de software apasionado por crear soluciones funcionales, escalables y
+                        orientadas al usuario. En constante aprendizaje de nuevas tecnologías para aportar valor y
+                        calidad a cada proyecto.</p>
                     <a href="mailto:aldemarh645@gmail.com" target="_blank" rel="noopener noreferrer"
                         class="btn">Trabajemos Juntos</a>
+                    <a href="cvaldo.pdf" target="_blank" rel="noopener noreferrer" class="btn">Curriculum</a>
+                </div>
+                <div class="hero-image">
+                    <img src="aldo.jpg" alt="Aldemar Hernandez" class="profile-img">
                 </div>
             </div>
         </div>
@@ -174,8 +179,8 @@
         <div class="contact-container">
 
             <div class="contact-info">
-                <h2>Contáctanos</h2>
-                <p>Si tienes alguna pregunta o deseas trabajar con nosotros, envíanos un mensaje.</p>
+                <h2>Contáctame</h2>
+                <p>Si tienes alguna pregunta o deseas trabajar conmigo, enviame un mensaje.</p>
 
                 <div class="info-item">
                     📧 aldemarh645@gmail.com
@@ -190,10 +195,11 @@
                 </div>
             </div>
 
-            <form id="contactForm" class="contact-form" action="https://formsubmit.co/aldemarh645@gmail.com" method="POST">
+            <form id="contactForm" class="contact-form" action="https://formsubmit.co/aldemarh645@gmail.com"
+                method="POST">
                 <!-- Configuraciones de FormSubmit (opcionales) -->
                 <input type="hidden" name="_captcha" value="false">
-                
+
                 <input type="text" id="name" name="name" placeholder="Nombre completo" required>
 
                 <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
@@ -215,89 +221,7 @@
             <p>&copy; 2026 Aldemar Hernandez. Todos los derechos reservados.</p>
         </div>
     </footer>
-
-    <script>
-        // Smooth scrolling para los enlaces de navegación
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Animación de las barras de habilidades al hacer scroll
-        const observerOptions = {
-            threshold: 0.5
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.querySelectorAll('.skill-progress').forEach(bar => {
-                        bar.style.width = bar.style.width;
-                    });
-                }
-            });
-        }, observerOptions);
-
-        const skillsSection = document.querySelector('.skills');
-        if (skillsSection) {
-            observer.observe(skillsSection);
-        }
-
-
-        const form = document.getElementById("contactForm");
-        const message = document.getElementById("formMessage");
-
-        form.addEventListener("submit", async function (e) {
-
-            e.preventDefault();
-
-            const name = document.getElementById("name").value.trim();
-            const email = document.getElementById("email").value.trim();
-            const text = document.getElementById("message").value.trim();
-
-            if (!name || !email || !text) {
-
-                message.style.color = "red";
-                message.innerText = "Por favor completa todos los campos.";
-
-                return;
-
-            }
-
-            try {
-                // Envío asíncrono con Formspree
-                const response = await fetch(form.action, {
-                    method: form.method,
-                    body: new FormData(form),
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-
-                if (response.ok) {
-                    message.style.color = "green";
-                    message.innerText = "¡Mensaje enviado correctamente! Me pondré en contacto contigo pronto.";
-                    form.reset();
-                } else {
-                    message.style.color = "red";
-                    message.innerText = "Hubo un problema al enviar tu mensaje. Inténtalo de nuevo.";
-                }
-            } catch (error) {
-                message.style.color = "red";
-                message.innerText = "Hubo un error de conexión.";
-            }
-
-        });
-
-    </script>
+    <script src="java.js"></script>
 </body>
 
-</html> |
+</html>

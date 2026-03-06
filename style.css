@@ -255,12 +255,11 @@ nav ul li a.active {
 }
 
 .hero-grid {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    width: 100%;
-    max-width: 900px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    max-width: 1200px;
     margin: 0 auto;
     position: relative;
     z-index: 1;
@@ -270,59 +269,50 @@ nav ul li a.active {
     text-align: left;
 }
 
+/* Contenedor de la imagen en la sección hero */
 .hero-image {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 2rem;
-    /* Add padding to prevent image from touching edges */
+    width: 100%;
 }
 
+/* Imagen de perfil */
 .profile-img {
     width: 100%;
-    max-width: 450px;
-    aspect-ratio: 3 / 4;
-    border-radius: 24px;
-    margin: 0 auto;
+    height: auto;
+    aspect-ratio: 4 / 5; /* Formato retrato para ocupar bien el espacio vertical */
+    border-radius: 24px; /* Bordes elegantemente redondeados en lugar de círculo */
     object-fit: cover;
-
-    /* borde moderno */
-    border: 5px solid rgba(255, 255, 255, 0.9);
-
-    /* sombra más profesional */
-    box-shadow:
-        0 20px 40px rgba(0, 0, 0, 0.25),
-        0 0 0 8px rgba(255, 255, 255, 0.05);
-
-    /* animación suave */
-    transition: all 0.4s ease;
-
-    position: relative;
-    overflow: hidden;
+    border: 5px solid #ffffff;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* efecto hover elegante */
+/* Efecto hover */
 .profile-img:hover {
     transform: scale(1.05);
-    box-shadow:
-        0 25px 60px rgba(0, 0, 0, 0.35),
-        0 0 0 10px rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
 }
 
-/* brillo superior */
-.profile-img::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -75%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(120deg,
-            rgba(255, 255, 255, 0) 0%,
-            rgba(255, 255, 255, 0.4) 50%,
-            rgba(255, 255, 255, 0) 100%);
-    transform: skewX(-25deg);
+/* Responsive para tablets */
+@media (max-width: 768px) {
+    .profile-img {
+        width: 80%;
+        max-width: 350px;
+        height: auto;
+    }
 }
+
+/* Responsive para móviles */
+@media (max-width: 480px) {
+    .profile-img {
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+    }
+}
+
 
 /* animación del brillo */
 .profile-img:hover::after {
@@ -923,6 +913,16 @@ body {
     border-radius: 6px;
     border: 1px solid #ddd;
     font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:hover,
+.contact-form textarea:hover,
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.3);
+    outline: none;
 }
 
 .contact-form button {
@@ -1188,7 +1188,9 @@ footer p {
 
     .hero-image {
         order: -1;
-        /* Move image to top on mobile */
+        justify-content: center;
+        /* En móviles centramos la foto */
+        margin-bottom: 2rem;
     }
 
     .about-content,
@@ -1224,12 +1226,5 @@ footer p {
 
     .hero p {
         font-size: 1rem;
-    }
-
-    .profile-img {
-        max-width: 320px;
-        aspect-ratio: 3 / 4;
-        border-radius: 20px;
-        margin-bottom: 2rem;
     }
 }
