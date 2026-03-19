@@ -33,6 +33,79 @@ if (skillsSection) {
     observer.observe(skillsSection);
 }
 
+// Funcionalidad de scroll horizontal para proyectos
+function scrollProjects(direction) {
+    const wrapper = document.getElementById('projectsWrapper');
+    if (!wrapper) return;
+
+    const scrollAmount = 380; // Ancho aproximado de cada tarjeta + gap
+    const currentScroll = wrapper.scrollLeft;
+
+    if (direction === 'left') {
+        wrapper.scrollTo({
+            left: currentScroll - scrollAmount,
+            behavior: 'smooth'
+        });
+    } else if (direction === 'right') {
+        wrapper.scrollTo({
+            left: currentScroll + scrollAmount,
+            behavior: 'smooth'
+        });
+    }
+}
+
+// Control de scroll con el mouse wheel
+const projectsWrapper = document.getElementById('projectsWrapper');
+if (projectsWrapper) {
+    projectsWrapper.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        projectsWrapper.scrollLeft += e.deltaY;
+    });
+}
+
+// Control de scroll con teclas de flecha
+document.addEventListener('keydown', (e) => {
+    const wrapper = document.getElementById('projectsWrapper');
+    if (!wrapper) return;
+
+    if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        scrollProjects('left');
+    } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        scrollProjects('right');
+    }
+});
+
+// Efecto de desvanecimiento en los bordes del contenedor de scroll
+function updateScrollIndicators() {
+    const wrapper = document.getElementById('projectsWrapper');
+    if (!wrapper) return;
+
+    const { scrollLeft, scrollWidth, clientWidth } = wrapper;
+
+    // Mostrar/ocultar botones según posición
+    const leftBtn = document.querySelector('.scroll-nav.left');
+    const rightBtn = document.querySelector('.scroll-nav.right');
+
+    if (leftBtn) {
+        leftBtn.style.opacity = scrollLeft > 10 ? '1' : '0';
+        leftBtn.style.pointerEvents = scrollLeft > 10 ? 'auto' : 'none';
+    }
+
+    if (rightBtn) {
+        rightBtn.style.opacity = scrollLeft < (scrollWidth - clientWidth - 10) ? '1' : '0';
+        rightBtn.style.pointerEvents = scrollLeft < (scrollWidth - clientWidth - 10) ? 'auto' : 'none';
+    }
+}
+
+// Escuchar eventos de scroll para actualizar indicadores
+if (projectsWrapper) {
+    projectsWrapper.addEventListener('scroll', updateScrollIndicators);
+    // Inicializar estado de los indicadores
+    updateScrollIndicators();
+}
+
 
 const form = document.getElementById("contactForm");
 const message = document.getElementById("formMessage");

@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portafolio Profesional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -85,89 +89,191 @@
         </div>
     </section>
 
-    <section id="proyectos">
-        <div class="container">
-            <h2>Proyectos en los que he trabajado.</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image"></div>
-                    <div class="project-content">
-                        <h3>Soporte de plataforma Premium Academy</h3>
-                        <p>Plataforma digital de cursos, enfocada en Trader y demas.</p>
-                        <div class="project-tags">
-                            <span class="tag">Soporte</span>
-                            <span class="tag">compromiso</span>
-                            <span class="tag">Excelencia</span>
+    <section id="proyectos" class="projects-section">
+        <div class="projects-container">
+            <div class="projects-header">
+                <h2>Proyectos en los que he trabajado</h2>
+                <p>Descubre mi trabajo en desarrollo web, pruebas de software y soluciones tecnológicas innovadoras</p>
+            </div>
+
+            <div class="projects-scroll-container">
+                <!-- Navigation Arrows -->
+                <button class="scroll-nav left" onclick="scrollProjects('left')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M15 18l-6-6 6-6"></path>
+                    </svg>
+                </button>
+
+                <button class="scroll-nav right" onclick="scrollProjects('right')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M9 18l6-6-6-6"></path>
+                    </svg>
+                </button>
+
+                <!-- Scrollable Projects -->
+                <div class="projects-scroll-wrapper" id="projectsWrapper">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <span class="project-image-icon">🎓</span>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Soporte de plataforma Premium Academy</h3>
+                            <p class="project-description">Plataforma digital de cursos especializada en trading y
+                                educación financiera, con soporte técnico integral y mantenimiento continuo.</p>
+                            <div class="project-tags">
+                                <span class="tag">Soporte Técnico</span>
+                                <span class="tag">Compromiso</span>
+                                <span class="tag">Excelencia</span>
+                                <span class="tag">E-learning</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <span class="project-link-icon">🔗</span>
+                                    Ver proyecto
+                                </a>
+                                <a href="#" class="project-link secondary">
+                                    <span class="project-link-icon">📊</span>
+                                    Métricas
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="project-card">
-                    <div class="project-image"></div>
-                    <div class="project-content">
-                        <h3>App Alerta Rosa</h3>
-                        <p>Aplicación móvil para alertar cuando una mujer se encuentra en peligro, con geolocalización y
-                            contactos de emergencia.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">QA Tester</span>
-                            <span class="tag">Automatizacion</span>
-                            <span class="tag">Testing</span>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <span class="project-image-icon">📱</span>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">App Alerta Rosa</h3>
+                            <p class="project-description">Aplicación móvil de seguridad para mujeres, con
+                                geolocalización en tiempo real, contactos de emergencia y alertas instantáneas.</p>
+                            <div class="project-tags">
+                                <span class="tag">QA Tester</span>
+                                <span class="tag">Automatización</span>
+                                <span class="tag">Testing</span>
+                                <span class="tag">Seguridad</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <span class="project-link-icon">🔗</span>
+                                    Ver proyecto
+                                </a>
+                                <a href="#" class="project-link secondary">
+                                    <span class="project-link-icon">🧪</span>
+                                    Pruebas
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="project-card">
-                    <div class="project-image"></div>
-                    <div class="project-content">
-                        <h3>Portfolio Interactivo</h3>
-                        <p>Sitio web portfolio personal, basado en tecnologías fundamentales son HTML, CSS y JavaScript.
-                            Herramientas modernas como React, Tailwind CSS y Framer Motion son populares para mejorar la
-                            interactividad y diseño</p>
-                        <div class="project-tags">
-                            <span class="tag">HTML</span>
-                            <span class="tag">CSS</span>
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">React</span>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <span class="project-image-icon">💻</span>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Portfolio Interactivo</h3>
+                            <p class="project-description">Sitio web portfolio personal con animaciones modernas, diseño
+                                responsive y tecnologías avanzadas para una experiencia visual impactante.</p>
+                            <div class="project-tags">
+                                <span class="tag">HTML</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">React</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <span class="project-link-icon">🔗</span>
+                                    Ver proyecto
+                                </a>
+                                <a href="#" class="project-link secondary">
+                                    <span class="project-link-icon">🎨</span>
+                                    Diseño
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="project-card">
-                    <div class="project-image"></div>
-                    <div class="project-content">
-                        <h3>DeepCapitals</h3>
-                        <p>Plataforma web y app relacionada con Trading. </p>
-                        <div class="project-tags">
-                            <span class="tag">QA Testing</span>
-                            <span class="tag">Automatización</span>
-                            <span class="tag">Pruebas de la App</span>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <span class="project-image-icon">📈</span>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">DeepCapitals</h3>
+                            <p class="project-description">Plataforma web y aplicación móvil para trading en mercados
+                                financieros, con análisis en tiempo real y herramientas de inversión avanzadas.</p>
+                            <div class="project-tags">
+                                <span class="tag">QA Testing</span>
+                                <span class="tag">Automatización</span>
+                                <span class="tag">Pruebas de App</span>
+                                <span class="tag">Finanzas</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <span class="project-link-icon">🔗</span>
+                                    Ver proyecto
+                                </a>
+                                <a href="#" class="project-link secondary">
+                                    <span class="project-link-icon">⚡</span>
+                                    Performance
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="project-card">
-                    <div class="project-image"></div>
-                    <div class="project-content">
-                        <h3>Proyecto Autos</h3>
-                        <p>Visualización interactiva de datos de autos usando html, css, JavaScript</p>
-                        <div class="project-tags">
-                            <span class="tag">Html</span>
-                            <span class="tag">css</span>
-                            <span class="tag">JavaScript</span>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <span class="project-image-icon">🚗</span>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Proyecto Autos</h3>
+                            <p class="project-description">Visualización interactiva de datos de automóviles con
+                                gráficos dinámicos, filtros avanzados y análisis de tendencias del mercado automotriz.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">HTML</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Data Viz</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <span class="project-link-icon">🔗</span>
+                                    Ver proyecto
+                                </a>
+                                <a href="#" class="project-link secondary">
+                                    <span class="project-link-icon">📊</span>
+                                    Estadísticas
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="project-card">
-                    <div class="project-image"></div>
-                    <div class="project-content">
-                        <h3>Diseños con Canvas y figma</h3>
-                        <p>Creacion de diseños interactivos usando Canvas y figma.</p>
-                        <div class="project-tags">
-                            <span class="tag">Canvas</span>
-                            <span class="tag">Figma</span>
-                            <span class="tag">Behance</span>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <span class="project-image-icon">🎨</span>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Diseños con Canvas y Figma</h3>
+                            <p class="project-description">Creación de diseños interactivos utilizando Canvas para
+                                animaciones web y Figma para prototipos de alta fidelidad y UI/UX.</p>
+                            <div class="project-tags">
+                                <span class="tag">Canvas</span>
+                                <span class="tag">Figma</span>
+                                <span class="tag">Behance</span>
+                                <span class="tag">Diseño</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <span class="project-link-icon">🔗</span>
+                                    Ver proyecto
+                                </a>
+                                <a href="#" class="project-link secondary">
+                                    <span class="project-link-icon">✨</span>
+                                    Creatividad
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -175,7 +281,7 @@
         </div>
     </section>
 
-    <section class="contact-section">
+    <section class="contacto" id="contacto">
         <div class="contact-container">
 
             <div class="contact-info">
@@ -197,7 +303,7 @@
 
             <form id="contactForm" class="contact-form" action="https://formsubmit.co/aldemarh645@gmail.com"
                 method="POST">
-                <!-- Configuraciones de FormSubmit (opcionales) -->
+
                 <input type="hidden" name="_captcha" value="false">
 
                 <input type="text" id="name" name="name" placeholder="Nombre completo" required>
