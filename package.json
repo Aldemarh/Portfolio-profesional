@@ -1,0 +1,30 @@
+{
+  "name": "portfolio.java",
+  "version": "1.0.0",
+  "description": "",
+  "main": "java.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aldemarh/Portfolio-profesional.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Aldemarh/Portfolio-profesional/issues"
+  },
+  "homepage": "https://github.com/Aldemarh/Portfolio-profesional#readme",
+  "dependencies": {
+    "@vitejs/plugin-react": "^6.0.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "vite": "^8.0.1"
+  }
+}
